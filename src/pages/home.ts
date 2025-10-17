@@ -13,11 +13,7 @@ export class HomePage extends LitElement {
   render() {
     return html`
       <h1>Home Page</h1>
-      <p>Welcome to the home page!</p>
-      <nav>
-        <a href="/about">About</a> |
-        <a href="/contact">Contact</a>
-      </nav>
+      <p>Welcome to the home page.</p>
     `;
   }
 }
@@ -27,3 +23,4 @@ declare global {
     "page-home": HomePage;
   }
 }
+

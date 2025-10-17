@@ -6,8 +6,6 @@ import { Router } from "@lit-labs/router";
 export class Script2 extends LitElement {
   private router = new Router(this, [
     { path: "/", render: () => html`<h1>Home</h1>` },
-    { path: "/projects", render: () => html`<h1>Projects</h1>` },
-    { path: "/about", render: () => html`<h1>About</h1>` },
   ]);
 
   static styles = css`
