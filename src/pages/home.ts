@@ -5,8 +5,7 @@ import { customElement } from "lit/decorators.js";
 export class HomePage extends LitElement {
   static styles = css`
     :host {
-      display: block;
-      padding: 20px;
+      color: blue;
     }
   `;
 
@@ -23,4 +22,3 @@ declare global {
     "page-home": HomePage;
   }
 }
-

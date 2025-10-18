@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": ".", // Important for path mapping to work
+    "paths": {
+      "~/*": ["./src/*"] // Maps '~/*' to './src/*'
+    },
+
     "target": "ES2022",
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
