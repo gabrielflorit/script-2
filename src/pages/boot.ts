@@ -56,6 +56,7 @@ export class BootPage extends LitElement {
   }
 
   private onComplete() {
+    sessionStorage.setItem("hasBooted", "true");
     const target = sessionStorage.getItem("bootTarget") || "/home";
     sessionStorage.removeItem("bootTarget");
     window.location.href = target;
