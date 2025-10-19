@@ -43,12 +43,19 @@ export class Joystick extends LitElement {
     this.dispatchEvent(new CustomEvent("joystick-up", { bubbles: true, composed: true }));
   };
 
+  private handlePointerCancel = (e: PointerEvent) => {
+    e.preventDefault();
+    // Treat cancel like a release
+    this.dispatchEvent(new CustomEvent("joystick-up", { bubbles: true, composed: true }));
+  };
+
   render() {
     return html`
       <div
         class="joystick"
         @pointerdown=${this.handlePointerDown}
         @pointerup=${this.handlePointerUp}
+        @pointercancel=${this.handlePointerCancel}
       >
         PRESS
       </div>
