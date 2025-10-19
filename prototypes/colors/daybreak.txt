@@ -1,0 +1,9 @@
+;paint.net Palette File
+;Downloaded from Lospec.com/palette-list
+;Palette Name: Daybreak
+;Description: A 2bit (4 color) palette where the colors were taken from photo of a real-life sunrise. The lighter colors were modified slightly.
+;Colors: 4
+FF08050c
+FF822d30
+FFeb754d
+FFf8b581

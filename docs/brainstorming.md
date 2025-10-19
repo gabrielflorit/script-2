@@ -8,7 +8,7 @@ This document captures the design decisions and philosophy behind SCRIPT-2, a fa
 
 SCRIPT-2 is a fantasy game console inspired by PICO-8 and the ZX Spectrum, designed as a creative constraint-based environment built around the concept of "two." The entire application presents a scene of a CRT monitor (displaying 1024x768 content) sitting on a desk, with a one-button joystick controller beside it. This creates the illusion of viewing an actual physical console setup. The interface uses a four-color palette for syntax highlighting and UI elements, while the game canvas itself uses only one color - pixels are either on (bright) or off (dark).
 
-When users visit SCRIPT-2, they see a quick ZX Spectrum-style boot sequence that establishes the console metaphor. After boot, they see the home screen offering four paths: new game (or "play" if a game URL is loaded), edit, learn, and about. The 1024x768 console dimensions remain fixed, creating a consistent CRT viewing experience.
+When users visit SCRIPT-2, they see the home screen offering four paths: new game (or "play" if a game URL is loaded), edit, learn, and about. The 1024x768 console dimensions remain fixed, creating a consistent CRT viewing experience.
 
 The target audience is creative beginners - exemplified by a 14-year-old who wants to make games and learn coding concepts through hands-on building. The design prioritizes fun, immediate feedback, and learning through doing, while the severe constraints (one-bit graphics, one button, two sounds, small code size) force creative problem-solving rather than feature complexity.
 
@@ -54,7 +54,7 @@ The tutorial content itself can modify what's shown in the code pane (highlighti
 
 SCRIPT-2 uses a local-first approach with optional URL-based sharing. Games are automatically saved to browser local storage with metadata including: title, timestamp, and a thumbnail screenshot of the game. The "load game" interface displays saved projects as a visual grid with thumbnails and titles, making it easy to find and resume work.
 
-For sharing, users can export their game as a URL with the code compressed into the hash or query parameters. Since the editor enforces a 2,048 character limit, URL size isn't a concern - the compressed code will reliably fit within browser and sharing platform limits. When someone visits a game URL, after the boot sequence they see the game with options to either play it or open it in the editor.
+For sharing, users can export their game as a URL with the code compressed into the hash or query parameters. Since the editor enforces a 2,048 character limit, URL size isn't a concern - the compressed code will reliably fit within browser and sharing platform limits. When someone visits a game URL, they see the game with options to either play it or open it in the editor.
 
 This hybrid approach provides the best of both worlds: projects persist locally without requiring accounts or authentication, while URL sharing enables frictionless distribution - no backend, no login, just copy and paste a link.
 
@@ -64,7 +64,7 @@ This hybrid approach provides the best of both worlds: projects persist locally 
 
 SCRIPT-2 presents itself as a physical scene: a CRT monitor sitting on a desk with a one-button joystick controller beside it. The monitor displays 1024x768 content, and the entire setup creates an immersive fantasy console experience as if you're sitting at an actual retro computer workstation. The interface uses a four-color palette that enables syntax highlighting and better visual hierarchy while maintaining a cohesive retro aesthetic. However, the game canvas itself is strictly one-bit - pixels are either on or off, creating pure binary graphics.
 
-The boot sequence is a quick (1-2 second) homage to the ZX Spectrum, establishing the "fantasy console" metaphor immediately. After boot, users see the home screen within the CRT display, with the physical joystick controller visible on the desk. All UI elements are HTML-based but styled to look retro and console-like, maintaining the aesthetic without sacrificing accessibility or functionality.
+Users see the home screen within the CRT display, with the physical joystick controller visible on the desk. All UI elements are HTML-based but styled to look retro and console-like, maintaining the aesthetic without sacrificing accessibility or functionality.
 
 The home screen presents four options in this retro-styled format: new game (or "play" when a game is loaded), edit, learn, and about. The editor interface maintains the theme with monospace fonts and the four-color palette for syntax highlighting. The physical-looking joystick controller is always visible on the desk as part of the scene.
 
