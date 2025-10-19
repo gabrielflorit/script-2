@@ -5,14 +5,29 @@ import { customElement } from "lit/decorators.js";
 export class HomePage extends LitElement {
   static styles = css`
     :host {
-      color: blue;
+      display: block;
+      padding: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 1rem 0;
     }
   `;
 
   render() {
     return html`
-      <h1>Home Page</h1>
-      <p>Welcome to the home page.</p>
+      <h1>SCRIPT-2</h1>
+      <ul>
+        <li>Play</li>
+        <li>Edit</li>
+        <li>Learn</li>
+        <li>About</li>
+      </ul>
     `;
   }
 }
