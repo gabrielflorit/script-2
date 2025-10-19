@@ -15,7 +15,7 @@ export class Joystick extends LitElement {
       background: #444;
       border: 3px solid #888;
       cursor: pointer;
-      touch-action: none;
+      touch-action: manipulation;
       user-select: none;
       -webkit-user-select: none;
       -webkit-touch-callout: none;
@@ -33,8 +33,18 @@ export class Joystick extends LitElement {
     }
   `;
 
+  private lastTapTime = 0;
+
   private handlePointerDown = (e: PointerEvent) => {
     e.preventDefault();
+
+    // Prevent double-tap zoom
+    const now = Date.now();
+    if (now - this.lastTapTime < 300) {
+      e.stopPropagation();
+    }
+    this.lastTapTime = now;
+
     this.dispatchEvent(new CustomEvent("joystick-down", { bubbles: true, composed: true }));
   };
 
@@ -49,6 +59,14 @@ export class Joystick extends LitElement {
     this.dispatchEvent(new CustomEvent("joystick-up", { bubbles: true, composed: true }));
   };
 
+  private handleTouchStart = (e: TouchEvent) => {
+    e.preventDefault();
+  };
+
+  private handleGestureStart = (e: Event) => {
+    e.preventDefault();
+  };
+
   render() {
     return html`
       <div
@@ -56,6 +74,8 @@ export class Joystick extends LitElement {
         @pointerdown=${this.handlePointerDown}
         @pointerup=${this.handlePointerUp}
         @pointercancel=${this.handlePointerCancel}
+        @touchstart=${this.handleTouchStart}
+        @gesturestart=${this.handleGestureStart}
       >
         PRESS
       </div>
