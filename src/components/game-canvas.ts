@@ -38,14 +38,14 @@ export class GameCanvas extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.addEventListener("joystick-down", this.handleJoystickDown);
-    this.addEventListener("joystick-up", this.handleJoystickUp);
+    window.addEventListener("joystick-down", this.handleJoystickDown);
+    window.addEventListener("joystick-up", this.handleJoystickUp);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.removeEventListener("joystick-down", this.handleJoystickDown);
-    this.removeEventListener("joystick-up", this.handleJoystickUp);
+    window.removeEventListener("joystick-down", this.handleJoystickDown);
+    window.removeEventListener("joystick-up", this.handleJoystickUp);
     if (this.animationFrame) {
       cancelAnimationFrame(this.animationFrame);
     }
